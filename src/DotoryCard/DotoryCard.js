@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './DotoryCard.css';
 import anime from "animejs";
 
+
 function DotoryCard() {
     useEffect(() => {
         const $card = document.querySelector(".card");
@@ -136,6 +137,13 @@ function DotoryCard() {
         Email: () => setText('Email'),
         Card: () => setText('DOTORY')
     };
+    const goToGitHub=()=>{
+        window.open("https://github.com/nolang1308")
+    }
+    const goToInstagram=()=>{
+        window.open("https://www.instagram.com/no_lang_1308/")
+    }
+
 
     return (
         <div className="App">
@@ -144,10 +152,10 @@ function DotoryCard() {
                 <style className="hover"></style>
                 <div className="btn-shine">{text}</div>
                 <div className="btn1">
-                    <div className="git-icon" onMouseEnter={hoverHandlers.GitHub}></div>
+                    <div className="git-icon" onMouseEnter={hoverHandlers.GitHub} onClick={goToGitHub}></div>
                 </div>
                 <div className="btn2">
-                    <div className="instagram-icon" onMouseEnter={hoverHandlers.Instagram}></div>
+                    <div className="instagram-icon" onMouseEnter={hoverHandlers.Instagram} onClick={goToInstagram}></div>
                 </div>
                 <div className="btn3"></div>
                 <div className="btn4">
@@ -157,7 +165,9 @@ function DotoryCard() {
                     <div className="mail-icon" onMouseEnter={hoverHandlers.Email}></div>
                 </div>
             </div>
+
         </div>
+
     );
 }
 
