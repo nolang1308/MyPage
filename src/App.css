@@ -1,5 +1,24 @@
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
 .App {
     text-align: center;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #f83100, #feb47b, #86a8e7, #7f7fd5, #91eae4);
+    background-size: 600% 600%;
+    animation: gradientBackground 8s ease infinite;
 }
 
 #app {
@@ -8,11 +27,7 @@
     perspective-origin: 50% 50%;
     perspective: 800px;
 }
-.test{
-    width: 200px;
-    height: 200px;
-    background-color: yellow;
-}
+
 .card {
     z-index: 10;
 
@@ -334,5 +349,11 @@ h1 {
 .btn5:hover .mail-icon {
     width: 130px;
     height: 130px;
+}
+
+.glass{
+    width: 200px;
+    height: 200px;
+    top: 1000px
 }
 
