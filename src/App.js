@@ -4,11 +4,7 @@ import DotoryCard from "./DotoryCard/DotoryCard";
 import Glass from "./Glass/Glass";
 
 function App() {
-    const toSite=()=>{
-        window.open("https://github.com")
-    }
-
-
+    
     return (
         <div className="App">
             <DotoryCard/>
