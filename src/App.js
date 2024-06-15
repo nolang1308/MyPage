@@ -4,7 +4,7 @@ import DotoryCard from "./DotoryCard/DotoryCard";
 import Glass from "./Glass/Glass";
 
 function App() {
-    
+
     return (
         <div className="App">
             <DotoryCard/>
