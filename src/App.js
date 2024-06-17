@@ -10,6 +10,7 @@ function App() {
             <DotoryCard/>
             <div className={"glass"}>
                 <Glass/>
+                <div></div>
             </div>
 
 
