@@ -1,0 +1,45 @@
+.site-navigation {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    line-height: initial;
+    backdrop-filter: blur(10px);
+    height: 66.5px;
+}
+
+.site-navigation .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1234px;
+    padding: 0 20px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}

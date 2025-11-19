@@ -1,359 +1,49 @@
-@keyframes gradientBackground {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./fonts/Pretendard-Regular.ttf') format('truetype');
+    font-weight: 400;
 }
 
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./fonts/Pretendard-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./fonts/Pretendard-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./fonts/Pretendard-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
 
 .App {
     text-align: center;
     min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(270deg, #f83100, #feb47b, #86a8e7, #7f7fd5, #91eae4);
-    background-size: 600% 600%;
-    animation: gradientBackground 8s ease infinite;
-}
-
-#app {
-
-    height: 100%;
-    perspective-origin: 50% 50%;
-    perspective: 800px;
-}
-
-.card {
-    z-index: 10;
-
-    /*width: 480px;*/
-    width: 400px;
-    /*height: 296.66px;*/
-    height: 400px;
-    background-color: #ffffff;
-    /*background-size: cover; !* 이미지가 카드에 딱 맞게 조정됨 *!*/
-    background-repeat: no-repeat;
-    background-position: center; /* 이미지가 카드의 중앙에 위치 */
-    border-radius: 20px;
-    box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.75), 0 35px 25px -15px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    display: inline-block;
-    margin: 50px 10px;
-
-    /* Animation ready */
-    will-change: transform;
-
-    transition: transform 130ms ease;
-    transition-property: transform;
-
-    transform-style: preserve-3d;
-    transform-origin: 50% 50%;
-
-    transform: translate3d(0%, 0%, -400px);
-
-    &:hover {
-        z-index: 2;
-    }
-}
-
-
-.card.charizard {
-    background-image: url(../public/dotorycard.png);
+    background: url('../test.jpg') center center;
     background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
+    padding-top: 66.5px;
 }
 
-.card:before,
-.card:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background-image: linear-gradient(
-            115deg,
-            transparent 0%,
-
-            transparent 100%
-    );
-    background-position: 0% 0%;
-    background-repeat: no-repeat;
-    background-size: 300% 300%;
-    mix-blend-mode: color-dodge;
-    opacity: 0;
-    z-index: 1;
-    transform: translate3d(0, 0, 0);
-    animation: holoGradient 15s ease infinite;
-}
-
-.card:after {
-    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif");
-    background-position: center;
-    background-size: 180%;
-    mix-blend-mode: color-dodge;
-    opacity: 0;
-    z-index: 2;
-    animation: holoSparkle 30s ease infinite;
-}
-
-.card.active:before {
-    opacity: 0.5;
-    animation: none;
-    transition: none;
-    background-image: linear-gradient(
-            115deg,
-            transparent 0%,
-            transparent 25%,
-
-            transparent 70%,
-            transparent 100%
-    );
-}
-
-@keyframes holoSparkle {
-    0% {
-        opacity: 0;
-    }
-    12% {
-        opacity: 1;
-    }
-    70% {
-        opacity: 0.5;
-    }
-    95% {
-        opacity: 0.2;
-    }
-}
-
-@keyframes holoGradient {
-    3% {
-        opacity: 0;
-    }
-    5% {
-        background-position: 0% 0%;
-    }
-    7% {
-        opacity: 0.5;
-    }
-    9% {
-        background-position: 100% 100%;
-    }
-    11% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0;
-        background-position: 100% 100%;
-    }
-    55% {
-        opacity: 0.3;
-    }
-    70% {
-        opacity: 0;
-        background-position: 0% 0%;
-    }
-}
-
-.name {
-    font-size: 50px;
+.Title {
+    font-family: 'Pretendard';
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 100px;
 }
 
 body {
+    margin: 0;
     color: white;
-    background: #1c1c1c;
-    justify-content: center;
-    text-align: center;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 html {
     height: 100%;
 }
-
-h1 {
-    display: block;
-    margin-top: 30px;
-}
-
-.btn-shine {
-    margin-top: 300px;
-    position: fixed; /* 화면에 고정된 위치로 설정합니다. */
-    top: 50%; /* 화면 상단에서 50% 지점으로 이동합니다. */
-    left: 50%; /* 화면 왼쪽에서 50% 지점으로 이동합니다. */
-    transform: translate(-50%, -50%); /* 화면 중앙으로 정렬합니다. */
-    z-index: 1000; /* 다른 요소 위에 표시될 수 있도록 z-index를 설정합니다. */
-    padding: 12px 48px; /* 버튼의 내부 여백을 설정합니다. */
-    color: #ffffff; /* 텍스트 색상을 흰색으로 설정합니다. */
-    background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%); /* 그라데이션 배경을 설정합니다. */
-    background-position: 0; /* 그라데이션의 시작 위치를 설정합니다. */
-    -webkit-background-clip: text; /* 텍스트에만 배경을 적용합니다. */
-    -webkit-text-fill-color: transparent; /* 텍스트 색상을 투명하게 만듭니다. */
-    animation: shine 5s infinite linear; /* shine 애니메이션을 3초 간격으로 무한 반복하여 적용합니다. */
-    -webkit-text-size-adjust: none; /* 웹킷 브라우저에서 텍스트 크기 조정을 비활성화합니다. */
-    font-weight: 600; /* 폰트의 굵기를 설정합니다. */
-    font-size: 80px; /* 폰트의 크기를 설정합니다. */
-    text-decoration: none; /* 텍스트에 밑줄을 제거합니다. */
-    white-space: nowrap; /* 줄 바꿈을 방지합니다. */
-}
-
-@keyframes shine {
-    0% {
-        background-position: 0px; /* 그라데이션의 시작 위치를 설정합니다. */
-    }
-    100% {
-        background-position: 400px; /* 그라데이션의 끝 위치를 설정합니다. */
-    }
-}
-
-.btn1 {
-    z-index: -100;
-    position: absolute;
-    left: 50%;
-    top: 0%;
-    margin-top: 150px;
-    margin-left: -100px;
-    width: 200px;
-    height: 200px;
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform-origin 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.btn2 {
-    z-index: -100;
-
-    position: absolute;
-    left: 50%;
-    top: 0%;
-    margin-top: 150px;
-    margin-left: -100px;
-    width: 200px;
-    height: 200px;
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform-origin 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btn3 {
-    z-index: -110;
-    position: absolute;
-    border-radius: 100px;
-    left: 50%;
-    top: 0%;
-    margin-top: 225px;
-    margin-left: -25px;
-    width: 50px;
-    height: 50px;
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform-origin 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 248, 171);
-}
-.btn4 {
-    z-index: -100;
-
-    position: absolute;
-    left: 50%;
-    top: 0%;
-    margin-top: 150px;
-    margin-left: -100px;
-    width: 200px;
-    height: 200px;
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform-origin 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btn5 {
-    z-index: -100;
-
-    position: absolute;
-    left: 50%;
-    top: 0%;
-    margin-top: 150px;
-    margin-left: -100px;
-    width: 200px;
-    height: 200px;
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform-origin 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.git-icon {
-    z-index: -10;
-    background-image: url('../public/github.svg');
-    width: 100px;
-    height: 100px;
-    background-position: center;
-    background-size: cover;
-    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease; /* 호버 시 애니메이션을 위한 트랜지션 추가 */
-}
-.instagram-icon {
-    z-index: -10;
-
-    background-image: url('../public/instagram.svg');
-    width: 100px;
-    height: 100px;
-    background-position: center;
-    background-size: cover;
-    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease; /* 호버 시 애니메이션을 위한 트랜지션 추가 */
-}
-.discord-icon {
-    z-index: -10;
-
-    background-image: url('../public/discord.svg');
-    width: 100px;
-    height: 100px;
-    background-position: center;
-    background-size: cover;
-    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease; /* 호버 시 애니메이션을 위한 트랜지션 추가 */
-}
-.mail-icon {
-    z-index: -10;
-
-    background-image: url('../public/mail.svg');
-    width: 100px;
-    height: 100px;
-    background-position: center;
-    background-size: cover;
-    transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease; /* 호버 시 애니메이션을 위한 트랜지션 추가 */
-}
-
-
-
-.btn1:hover .git-icon {
-    width: 130px;
-    height: 130px;
-}
-
-.btn2:hover .instagram-icon {
-    width: 130px;
-    height: 130px;
-}
-
-
-.btn4:hover .discord-icon {
-    width: 130px;
-    height: 130px;
-}
-
-.btn5:hover .mail-icon {
-    width: 130px;
-    height: 130px;
-}
-
-.glass{
-    width: 200px;
-    height: 200px;
-    top: 1000px
-}
-

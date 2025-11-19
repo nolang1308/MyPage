@@ -1,16 +1,13 @@
 import React from 'react';
 import './App.css';
-import DotoryCard from "./DotoryCard/DotoryCard";
-import Glass from "./Glass/Glass";
+import Header from "./Header/Header";
 
 function App() {
 
     return (
         <div className="App">
-            <DotoryCard/>
-            <div className={"glass"}>
-                <Glass/>
-            </div>
+            <Header/>
+            <div className={"Title"}>웹? 앱? 뭐든 만듭니다.</div>
 
 
         </div>
